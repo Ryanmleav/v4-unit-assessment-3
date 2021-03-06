@@ -24,13 +24,15 @@
   font-size: calc(10px + 2vmin);
   color: rgb(81, 223, 241);
   font-weight: 700;
+  flex-wrap: wrap;
 }
-.bookdisplay{
-  display: flex;
-  flex-direction: row;
-}
+
 .App-link {
   color: #61dafb;
+}
+.dispaly{
+  flex-direction: row;
+  
 }
 
 @keyframes App-logo-spin {

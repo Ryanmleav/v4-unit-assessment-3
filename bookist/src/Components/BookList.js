@@ -1,18 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-export default class BookList extends Component {
-  constructor() {
-    super();
-
-    };
-    // let mappedBooks = this.props.books.map(this.props.title, this.props.author, this.props.img) 
-    
-    render() {
-     
-      
-    return (
-      <h1 className='bookdisplay'>books</h1>
-     
-    )
-  }
+const BookList = (props) => {
+  return (
+    <>
+      {props.books.map((book, idx) => (
+        <div key={idx} className='dispaly'>
+          <h1>{book.title}</h1>
+          <img src={book.img} onClick={props.addToShelf(book.title)}/>
+          <h1>{book.author}</h1>
+        </div>
+      ))}
+    </>
+  )
 }
+
+export default BookList

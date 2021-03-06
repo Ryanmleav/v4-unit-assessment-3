@@ -1,12 +1,27 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
-export default class Shelf extends Component{
-  constructor(){
+export default class Shelf extends Component {
+  constructor() {
     super();
+
   }
-  render(){
-    return(
-      <h1 className='bookdisplay'>Shelf</h1>
+
+  render() {
+
+    let mappedTitles = this.props.shelf;
+
+    return (
+      <>
+        <button onClick={this.props.clearShelf}> clear </button>
+        <h1 className='display'>Shelf</h1>
+        {mappedTitles.map((title, idx) => (
+          <div key={idx}>
+            <h1>{title}</h1>
+          </div>
+        ))}
+
+
+      </>
     )
   }
 }
